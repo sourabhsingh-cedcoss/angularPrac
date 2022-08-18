@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "test-4f90f": {
+      "hosting": {
+        "firebase-angular-auth": [
+          "test-4f90f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "test-4f90f"
+  }
+}

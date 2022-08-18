@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -19,6 +23,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
       messagingSenderId: '57524428694',
       appId: '1:57524428694:web:1b930c37389be74a2c87b7',
     }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],
