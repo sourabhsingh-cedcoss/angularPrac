@@ -1,2 +1,49 @@
-<p>home works!</p>
-<button (click)="signout()">signout</button>
+<style>
+  .nav {
+    /* width: 100%; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .btn {
+    border: none;
+    height: 40px;
+    font-size: large;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ddd;
+  }
+  .btn:hover {
+    background-color: #04aa6d;
+  }
+  .inputForm {
+    display: flex;
+    /* justify-content: space-around; */
+    height: 40px;
+    flex: 0.6;
+  }
+  .inputField {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0px 10px;
+  }
+  p {
+    padding: 0px 10px;
+    font-size: large;
+    font-weight: bold;
+  }
+</style>
+
+<div class="nav">
+  <div class="inputForm">
+    <p>Add User</p>
+    <input class="inputField" placeholder="name...." type="text" #name />
+    <input class="inputField" type="text" placeholder="phone..." #phone />
+    <button class="btn" (click)="addUser(name.value, phone.value)">Add</button>
+  </div>
+  <button class="btn" (click)="signout()">signout</button>
+</div>
