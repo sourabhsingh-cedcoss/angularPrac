@@ -9,6 +9,9 @@ import { FirebaseService } from './services/firebase.service';
 export class AppComponent implements OnInit {
   title = 'firebase-angular-auth';
   isSignedIn = false;
+
+  toggleSignIn = true; //variable to handle signin signup toggle
+
   constructor(public firebaseService: FirebaseService) {}
   ngOnInit() {
     if (localStorage.getItem('user') !== null) {
@@ -31,5 +34,10 @@ export class AppComponent implements OnInit {
 
   handleLogout() {
     this.isSignedIn = false;
+  }
+
+  // function to handle toggle
+  handleToggle() {
+    this.toggleSignIn = !this.toggleSignIn;
   }
 }
